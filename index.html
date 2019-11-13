@@ -23,7 +23,7 @@
           var murmur = Fingerprint2.x64hash128(values.join(""), 31);
           console.log(values);
           console.log(murmur);
-
+          document.body.innerHTML = values[0] + "</br></br>" + murmur;
           console.log(components); // an array of components: {key: ..., value: ...}
         });
       });
@@ -36,7 +36,7 @@
           var murmur = Fingerprint2.x64hash128(values.join(""), 31);
           console.log(values);
           console.log(murmur);
-          document.body.innerHTML = values[0]+'</br></br>'+murmur;
+          document.body.innerHTML = values[0] + "</br></br>" + murmur;
 
           console.log(components); // an array of components: {key: ..., value: ...}
         });
