@@ -20,13 +20,15 @@
       var b64 = canvas.toDataURL().replace('data:image/png;base64,', '');
       var bin = window.atob(b64);
       console.log(b64);
+      document.body.innerHTML = b64;
     }
   </script>
+    <!-- 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/1.5.8/eruda.min.js"></script>
   <script>
     eruda.init();
   </script>
-  <!-- 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
   <script>
     if (window.requestIdleCallback) {
