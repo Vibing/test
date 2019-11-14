@@ -6,8 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
-  <body></body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/1.5.8/eruda.min.js"></script>
+  <body>
+    <canvas width="10" height="8" id="mycanvas"></canvas>
+  </body>
+  <script>
+    getUUID();
+    function getUUID() {
+      var canvas = document.getElementById('mycanvas');
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#FF0000';
+      ctx.fillRect(0, 0, 8, 10);
+
+      var b64 = canvas.toDataURL().replace('data:image/png;base64,', '');
+      var bin = window.atob(b64);
+      console.log(b64);
+    }
+  </script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/1.5.8/eruda.min.js"></script>
   <script>
     eruda.init();
   </script>
@@ -20,10 +35,10 @@
           var values = components.map(function(component) {
             return component.value;
           });
-          var murmur = Fingerprint2.x64hash128(values.join(""), 31);
+          var murmur = Fingerprint2.x64hash128(values.join(''), 31);
           console.log(values);
           console.log(murmur);
-          document.body.innerHTML = values[0] + "</br></br>" + murmur;
+          document.body.innerHTML = values[0] + '</br></br>' + murmur;
           console.log(components); // an array of components: {key: ..., value: ...}
         });
       });
@@ -33,14 +48,15 @@
           var values = components.map(function(component) {
             return component.value;
           });
-          var murmur = Fingerprint2.x64hash128(values.join(""), 31);
+          var murmur = Fingerprint2.x64hash128(values.join(''), 31);
           console.log(values);
           console.log(murmur);
-          document.body.innerHTML = values[0] + "</br></br>" + murmur;
+          document.body.innerHTML = values[0] + '</br></br>' + murmur;
 
           console.log(components); // an array of components: {key: ..., value: ...}
         });
       }, 500);
     }
   </script>
+ -->
 </html>
